@@ -2,7 +2,7 @@
   <div class="weather-card">
     <div class="day-name">{{ dayName }}</div>
     <div class="date">{{ dateStr }}</div>
-    <img :src="iconUrl" class="weather-icon" />
+    <img :src="`https://cdn.jsdelivr.net/npm/qweather-icons@1.8.0/icons/${day.iconDay}.svg`" class="weather-icon" />
     <div class="temps">
       <span class="high">{{ day.tempMax }}°</span>
       <span class="low">{{ day.tempMin }}°</span>
@@ -21,7 +21,6 @@ const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const dateObj = new Date(props.day.fxDate)
 const dayName = weekDays[dateObj.getDay()]
 const dateStr = `${dateObj.getMonth() + 1}/${dateObj.getDate()}`
-const iconUrl = `https://icons.qweather.com/v2/cloud/${props.day.iconDay}.svg`
 </script>
 
 <style scoped>
